@@ -56,7 +56,7 @@
   will-change: padding;
 }
 .tgl-in + .tgl-span:active {
-  /* box-shadow: inset 0 0 0 2em #e8eae9; */
+  box-shadow: inset 0 0 0 2em #e8eae9;
 }
 .tgl-in + .tgl-span:active:after {
   --flow-distance-of-btn: 0.2em;
