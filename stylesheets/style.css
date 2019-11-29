@@ -182,5 +182,5 @@
     height: calc(var(--create-and-copy-btn-height) - 0.2em);
     margin: 0.1em;
     border: 0.1em solid rgb(50, 182, 177);
-    background: rgba(72, 209, 205, 0.3);
+    box-shadow: 0 0 5em 0.2em var(--big-box-shadow);
 }
