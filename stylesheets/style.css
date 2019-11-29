@@ -66,13 +66,13 @@
     background: none;
     color: inherit;
 }
-#copy-password-btn {
+#copy-password-btn, #refresh-password-btn {
     width: 2.7em;
     height: 2.7em;
     border: none;
     background: none;
 }
-#copy-password-btn:active {
+#copy-password-btn:active, #refresh-password-btn:active {
     width: 2.5em;
     height: 2.5em;
     margin: 0.1em;
@@ -88,7 +88,6 @@
     flex-wrap: wrap;
 }
 #size-customization, #character-customization {
-    flex: 1 1 42%;
     /* below will work for supported APPs */
     display: flex;
     flex-direction: column;
@@ -96,6 +95,23 @@
     align-content: center;
     align-items: stretch;
     margin: 1em 0.3em;
+    border: none;
+    border-top: 0.1em solid mediumturquoise;
+    border-bottom: 0.1em solid mediumturquoise;
+    box-shadow: 0 0 10em 0.1em rgba(255, 0, 0, 0.2);
+    border-radius: 1em;
+}
+#character-customization {
+    flex: 1 2 35%;
+}
+#size-customization {
+    flex: 2 1 50%;
+}
+#character-customization > legend, #size-customization  > legend {
+    background-color: var(--background-color);
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    border: 0.1em solid mediumturquoise;
 }
 .password-size-in-label {
     display: flex;
@@ -147,4 +163,24 @@
     width: 50%;
     min-width: 4em;
     text-align: left;
+}
+
+/* main section footer */
+#create-and-copy-btn {
+    --create-and-copy-btn-width: 50%;
+    --create-and-copy-btn-height: 3em;
+    width: var(--create-and-copy-btn-width);
+    height: var(--create-and-copy-btn-height);
+    text-transform: uppercase;
+    border-radius: 1em;
+    border: 0.1em solid mediumturquoise;
+    background: rgba(72, 209, 205, 0.1);
+    color: inherit;
+}
+#create-and-copy-btn:active {
+    width: calc(var(--create-and-copy-btn-width) - 0.2em);
+    height: calc(var(--create-and-copy-btn-height) - 0.2em);
+    margin: 0.1em;
+    border: 0.1em solid rgb(50, 182, 177);
+    background: rgba(72, 209, 205, 0.3);
 }

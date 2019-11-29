@@ -23,7 +23,6 @@
     border-radius: var(--btn-height);
     padding: calc(var(--btn-height)/30);
     transition: all 0.4s ease;
-    border: 1px solid #e8eae9;
     -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -59,7 +58,7 @@
   box-shadow: inset 0 0 0 2em #e8eae9;
 }
 .tgl-in + .tgl-span:active:after {
-  --flow-distance-of-btn: 0.2em;
+  --flow-distance-of-btn: 0.25em;
   padding-right: var(--flow-distance-of-btn);
 }
 .tgl-in:checked + .tgl-span {

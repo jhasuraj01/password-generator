@@ -28,6 +28,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+    margin: calc(var(--btn-height)*(0.5));
 }
 .tgl-in + .tgl-span:after, .tgl-in + .tgl-span:before {
   position: relative;
@@ -58,7 +59,8 @@
   box-shadow: inset 0 0 0 2em #e8eae9;
 }
 .tgl-in + .tgl-span:active:after {
-  padding-right: 0.8em;
+  --flow-distance-of-btn: 0.2em;
+  padding-right: var(--flow-distance-of-btn);
 }
 .tgl-in:checked + .tgl-span {
   background: green;
@@ -67,5 +69,5 @@
   box-shadow: none;
 }
 .tgl-in:checked + .tgl-span:active:after {
-  margin-left: -0.8em;
+  margin-left: calc(- var(--flow-distance-of-btn));
 }

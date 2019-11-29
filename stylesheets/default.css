@@ -29,10 +29,8 @@ input:active, input:focus  {
     outline: none;
     border: none;
 }
-button:active, button:focus, button  {
-    -webkit-tap-highlight-color : transparent;
-    -moz-tap-highlight-color    : transparent;
-    -ms-tap-highlight-color     : transparent;
+button:active, button:focus, button, label:active, label:focus, label {
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
     tap-highlight-color: transparent;
 }
 @media (prefers-color-scheme: light) {
