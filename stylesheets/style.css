@@ -1,0 +1,85 @@
+#body-header, #body-footer {
+    width: 100%;
+    background-color: rgb(199, 199, 199);
+}
+
+/************************************
+    Main Section
+**************************************/
+#main {
+    box-sizing: border-box;
+    max-width: 50em;
+    padding: 0.5em;
+}
+#main-section > * {
+    text-align: center;
+    margin: 1em 0;
+}
+
+
+
+.password-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.password-in-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0.2em;
+}
+#password-in {
+    flex-grow: 1;
+    margin: 0.2em;
+}
+#copy-password-btn {
+    float: right;
+}
+
+
+
+#tools {
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-wrap: wrap;
+}
+#size-customization, #character-customization {
+    flex: 1 1 43.5%;
+}
+.quick-inputs {
+    display: flex;
+    align-content: space-evenly;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.quick-inputs > label {
+    background-color: rgb(136, 125, 125);
+}
+.quick-inputs > button {
+    flex: 1 1 20%;
+    margin: 0.3em;
+    height: 3em;
+    width: 4em;
+    border-radius: 0.6em;
+}
+.options-label {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.option-label-txt {
+    width: 50%;
+    min-width: 4em;
+    text-align: left;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Generator | Suraj Jha</title>
+    <link rel="stylesheet" href="./stylesheets/default.css">
+    <link rel="stylesheet" href="./stylesheets/toggle-btn.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+    <link rel="apple-touch-icon" sizes="512x512" href="./images/icon/fingerprint(512).png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./images/icon/fingerprint(512).png">
+    <meta name="msapplication-TileImage" content="./images/icon/fingerprint(512).png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+
+<body>
+    <header id="body-header">
+        <h1 id="branding-h">Password Generator</h1>
+    </header>
+    <nav id="Side-navBar"></nav>
+    <main id="main">
+        <section id="main-section">
+            <header>
+                <h3>Create Password</h3>
+            </header>
+            <div class="password-container">
+                <label for="password-in" title="Your Password will appear here">
+                    Your Password:
+                </label>
+                <div class="password-in-container">
+                    <input type="text" id="password-in">
+                    <button id="copy-password-btn">COPY</button>
+                </div>
+            </div>
+            <div id="tools">
+                <fieldset id="size-customization">
+                    <legend>Password Size</legend>
+                    <label for="password-size-in" title="Enter your Password Length">
+                        Length
+                        <input type="number" id="password-size-in" placeholder="30">
+                    </label>
+                    <div class="quick-inputs">
+                        <button id="quick-inputs-8" title="Click here to set your password length to 8">8</button>
+                        <button id="quick-inputs-16" title="Click here to set your password length to 16">16</button>
+                        <button id="quick-inputs-24" title="Click here to set your password length to 24">24</button>
+                        <button id="quick-inputs-32" title="Click here to set your password length to 32">32</button>
+                        <button id="quick-inputs-48" title="Click here to set your password length to 48">48</button>
+                        <button id="quick-inputs-56" title="Click here to set your password length to 56">56</button>
+                        <button id="quick-inputs-64" title="Click here to set your password length to 64">64</button>
+                        <button id="quick-inputs-72" title="Click here to set your password length to 72">72</button>
+                    </div>
+                </fieldset>
+                <fieldset id="character-customization">
+                    <legend>Customization</legend>
+                    <label for="use-uppercase" class="options-label" title="Use A, B,..., Z in your password">
+                        <p class="option-label-txt">Uppercase</p>
+                        <input class="tgl-in" id="use-uppercase" type="checkbox" />
+                        <span class="tgl-span"></span>
+                    </label>
+                    <label for="use-lowercase" class="options-label" title="Use a, b,..., z in your password">
+                        <p class="option-label-txt">Lowercase</p>
+                        <input class="tgl-in" id="use-lowercase" type="checkbox" />
+                        <span class="tgl-span"></span>
+                    </label>
+                    <label for="use-numbers" class="options-label" title="Use 0, 1,..., 9 in your password">
+                        <p class="option-label-txt">Numbers</p>
+                        <input class="tgl-in" id="use-numbers" type="checkbox" />
+                        <span class="tgl-span"></span>
+                    </label>
+                    <label for="use-symbols" class="options-label" title="Use !, @, $,...., # in your password">
+                        <p class="option-label-txt">Symbols</p>
+                        <input class="tgl-in" id="use-symbols" type="checkbox" />
+                        <span class="tgl-span"></span>
+                    </label>
+                </fieldset>
+            </div>
+            <footer>
+                <label for="create-and-copy-btn">
+                    <button id="create-and-copy-btn">Create And Copy</button>
+                </label>
+            </footer>
+        </section>
+    </main>
+    <footer id="body-footer">Thank You</footer>
+</body>
+
+</html>
