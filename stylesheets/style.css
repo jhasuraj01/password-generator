@@ -2,7 +2,24 @@
     width: 100%;
     background-color: rgb(199, 199, 199);
 }
+#body-header {
+    margin-top: 0;
+    padding: 0;
+    background-color: skyblue;
+}
 
+#branding-h {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-transform: uppercase;
+    margin: auto;
+    text-align: center;
+    background: #ffb0b0;
+    padding: 0.2em;
+    color: navy;
+}
 /************************************
     Main Section
 **************************************/
@@ -43,9 +60,22 @@
     flex-shrink: 1;
     margin: 0.2em;
     max-width: 100%;
+    border: none;
+    border-bottom: 0.25em solid violet;
+    padding: 0.1em;
+    background: none;
+    color: inherit;
 }
 #copy-password-btn {
-    float: right;
+    width: 2.7em;
+    height: 2.7em;
+    border: none;
+    background: none;
+}
+#copy-password-btn:active {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0.1em;
 }
 
 
@@ -58,13 +88,14 @@
     flex-wrap: wrap;
 }
 #size-customization, #character-customization {
-    flex: 1 1 43.5%;
+    flex: 1 1 42%;
     /* below will work for supported APPs */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
     align-items: stretch;
+    margin: 1em 0.3em;
 }
 .password-size-in-label {
     display: flex;
@@ -79,6 +110,10 @@
 }
 #password-size-in {
     width: 5em;
+    background: none;
+    color: inherit;
+    border: none;
+    border-bottom: 0.25em solid violet;
 }
 .quick-inputs {
     display: flex;
