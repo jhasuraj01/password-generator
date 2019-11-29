@@ -29,11 +29,11 @@ input:active, input:focus  {
     outline: none;
     border: none;
 }
-button:active, button:focus  {
-    -webkit-tap-highlight-color : none;
-    -moz-tap-highlight-color    : none;
-    -ms-tap-highlight-color     : none;
-    tap-highlight-color: none;
+button:active, button:focus, button  {
+    -webkit-tap-highlight-color : transparent;
+    -moz-tap-highlight-color    : transparent;
+    -ms-tap-highlight-color     : transparent;
+    tap-highlight-color: transparent;
 }
 @media (prefers-color-scheme: light) {
     body {
