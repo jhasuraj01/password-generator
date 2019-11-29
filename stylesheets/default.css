@@ -16,7 +16,7 @@ body {
 input, button, p, label, legend, div {
     font-size: inherit;
 }
-button {
+button, label {
     outline: none;
     -webkit-user-select : none;
     -moz-user-select    : none;
