@@ -98,7 +98,7 @@
     border: none;
     border-top: 0.1em solid mediumturquoise;
     border-bottom: 0.1em solid mediumturquoise;
-    box-shadow: 0 0 10em 0.1em rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 10em 0.2em var(--big-box-shadow);
     border-radius: 1em;
 }
 #character-customization {
