@@ -8,9 +8,7 @@
     padding: 2em 0;
     color: #fff;
     border-top:  0.1em solid darkcyan;
-}
-#body-footer {
-    box-shadow: inset 0 -1em 10em 0.2em var(--big-box-shadow);
+    box-shadow: inset 0 -1em 2em 0.2em var(--big-box-shadow);
     background-color: var(--background-color);
     color: var(--color);
 }
