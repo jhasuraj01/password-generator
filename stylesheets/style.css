@@ -1,11 +1,12 @@
-#body-header, #body-footer {
-    width: 100%;
-    background-color: rgb(199, 199, 199);
-}
 #body-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
     margin-top: 0;
-    padding: 0;
-    background-color: skyblue;
+    padding: 0.6em 0.3em;
+    background-color: rgb(0, 256, 256);
+    box-shadow: 0 0 10px 4px rgba(128, 128, 128, 0.5);
 }
 
 #branding-h {
@@ -14,10 +15,9 @@
     padding: 0;
     height: 100%;
     text-transform: uppercase;
-    margin: auto;
+    font-size: x-large;
     text-align: center;
-    background: #ffb0b0;
-    padding: 0.2em;
+    padding: 0 0.2em;
     color: navy;
 }
 /************************************
@@ -25,7 +25,7 @@
 **************************************/
 #main {
     box-sizing: border-box;
-    max-width: 50em;
+    max-width: 65em;
     padding: 0.5em;
     margin: auto;
 }
@@ -81,7 +81,7 @@
     display: flex;
     align-content: stretch;
     align-items: stretch;
-    justify-content: stretch;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 #size-customization, #character-customization {
@@ -98,11 +98,13 @@
     box-shadow: 0 0 10em 0.2em var(--big-box-shadow);
     border-radius: 1em;
 }
-#character-customization {
-    flex: 1 2 35%;
-}
 #size-customization {
     flex: 2 1 50%;
+    max-width: 25em;
+}
+#character-customization {
+    flex: 1 2 40%;
+    max-width: 20em;
 }
 #character-customization > legend, #size-customization  > legend {
     background-color: var(--background-color);
