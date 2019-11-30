@@ -45,6 +45,15 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+@media (min-height: 25em) {
+    .password-container {
+        position: sticky;
+        top: 0;
+        background-color: var(--background-color);
+        z-index: 1;
+    }
+}
 .password-in-container {
     box-sizing: border-box;
     flex-grow: 1;
