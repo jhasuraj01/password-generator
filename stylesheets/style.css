@@ -46,25 +46,25 @@
     flex-wrap: wrap;
 }
 .password-in-container {
+    box-sizing: border-box;
     flex-grow: 1;
     flex-shrink: 1;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     margin: 0.2em;
 }
 #password-in {
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex: 1 1 auto;
     margin: 0.2em;
-    max-width: 100%;
     border: none;
     border-bottom: 0.25em solid violet;
-    padding: 0.1em;
+    padding: 0.3em;
     background: none;
     color: inherit;
+    font-size: large;
 }
 #copy-password-btn, #refresh-password-btn {
     width: 2.7em;
@@ -73,11 +73,8 @@
     background: none;
 }
 #copy-password-btn:active, #refresh-password-btn:active {
-    width: 2.5em;
-    height: 2.5em;
-    margin: 0.1em;
+    transform: scale3d(0.94, 0.94, 0.94);
 }
-
 
 
 #tools {
@@ -190,4 +187,14 @@
     margin: 0.1em;
     border: 0.1em solid rgb(50, 182, 177);
     box-shadow: 0 0 5em 0.2em var(--big-box-shadow);
+}
+
+/*  ********************************
+    Random CSS
+    ******************************** */
+
+/* rotate class is added and removed via javascript to rotate object */
+.rotate {
+    transform: scale3d(0.94, 0.94, 0.94) rotateZ(-1turn);
+    transition: transform 500ms;
 }
