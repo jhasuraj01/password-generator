@@ -62,7 +62,10 @@ let getPassword = () => {
 
 let refresh = () => {
     let password = getPassword();
-    password_in.value = password;
+    if (typeof writePassword === 'function') {
+        if (writePassword(password) === false) password_in.value = password;
+    }
+    else password_in.value = password;
 }
 
 refresh();

@@ -185,22 +185,6 @@
     text-align: left;
 }
 
-/* main section footer */
-#create-and-copy-btn {
-    min-width: 8em;
-    text-transform: uppercase;
-    border-radius: 1em;
-    padding: 1em 1em;
-    border-color: #db40e0;
-    background: rgba(72, 209, 205, 0.1);
-    color: inherit;
-    transition: transform 100ms;
-}
-@media (min-width: 30em) {
-    #create-and-copy-btn {
-        width: 50%;
-    }
-}
 #create-and-copy-btn:active {
     transform: scale3d(0.97, 0.97, 0.97);
 }
