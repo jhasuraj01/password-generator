@@ -1,6 +1,6 @@
 .hamberger-menu-btn {
-    --hamberger-menu-btn-width: 2.7em;
-    --hamberger-menu-btn-height: 1.8em;
+    --hamberger-menu-btn-width: 2em;
+    --hamberger-menu-btn-height: 1.5em;
     width: var(--hamberger-menu-btn-width);
     height: var(--hamberger-menu-btn-height);
     border: 0;
@@ -9,8 +9,8 @@
     background: none;
 }
 .hamberger-menu-btn > .line {
-    --hamberger-menu-btn-line-height: calc(var(--hamberger-menu-btn-height) / 5);
-    --hamberger-menu-btn-line-vertical-margin: var(--hamberger-menu-btn-line-height);
+    --hamberger-menu-btn-line-height: calc(var(--hamberger-menu-btn-height) * (1/7) );
+    --hamberger-menu-btn-line-vertical-margin: calc(var(--hamberger-menu-btn-height) * (2/7) );
     display: block;
     width: var(--hamberger-menu-btn-width);
     height: var(--hamberger-menu-btn-line-height);
