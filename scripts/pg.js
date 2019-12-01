@@ -60,18 +60,21 @@ let getPassword = () => {
     return generate_password(atr);
 }
 
+let previous_timeOuts = [];
 let writePassword = (password) => {
-    password_in.focus();
+    previous_timeOuts.forEach(timeout => {
+        clearTimeout(timeout);
+    });
     password_in.value = '';
+
     for (let i = 0; i < password.length; i++) {
         const char = password[i];
-        setTimeout(() => {
-            password_in.value += char;
-        }, Math.min(i*20, i*250/password.length, i*500/password.length)); // maximum time for writing is 500ms.
+        previous_timeOuts.push(
+            setTimeout(() => {
+                password_in.value += char;
+            }, Math.min(i * 20, i * 250 / password.length, i * 500 / password.length)) // maximum time for writing is 500ms.
+        )
     }
-    setTimeout(() => {
-    password_in.blur();
-    }, Math.min(password.length*20, password.length*250/password.length, password.length*500/password.length));
 }
 
 let refresh = () => {
