@@ -52,6 +52,7 @@
         top: 0;
         background-color: var(--background-color);
         z-index: 1;
+        padding: 1vh 0;
     }
 }
 .password-in-container {
