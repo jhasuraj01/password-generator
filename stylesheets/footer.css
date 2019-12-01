@@ -32,7 +32,14 @@
 }
 .share-container a, .contact-container a {
     margin: 0.2em;
-    height: 3em;
-    width: 3em;
+    height: 1.8em;
+    width: 1.8em;
     text-align: center;
+}
+.social-icon {
+    fill: gray;
+    transition: fill 300ms;
+}
+.social-icon:active, .social-icon:focus, .social-icon:hover {
+    fill: var(--color);
 }
