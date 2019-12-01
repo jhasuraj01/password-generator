@@ -41,5 +41,5 @@
     transition: fill 300ms;
 }
 .social-icon:active, .social-icon:focus, .social-icon:hover {
-    fill: var(--color);
+    fill: var(--color); /* color variable is set in default.css */
 }
