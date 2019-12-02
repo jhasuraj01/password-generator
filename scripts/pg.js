@@ -101,10 +101,45 @@ let writePassword = (password) => {
     }
 }
 
+let password_strength_container = document.getElementById('password-strength-container');
+let password_strength = document.getElementById('password-strength');
+let showStrength = (strength) => {
+
+    strength = strength > 100 ? 100 : Math.round(strength);
+    let strengthJump = Math.abs(strength - password_strength.dataset.value);
+    password_strength.dataset.value = strength;
+    password_strength.innerText = `${strength}%`;
+
+    password_strength.style.transition = `all ${25*strengthJump}ms ease-in-out`;
+    password_strength_container.style.transition = `all ${25*strengthJump}ms ease`;
+    password_strength.style.transform = strength > 100 ? 'translateX(0)' : `translateX(${strength - 100}%)`;
+
+    if (strength < 25) {
+        password_strength.style.color = '#fff';
+        password_strength.style.backgroundColor = '#ff0000';
+        password_strength_container.style.backgroundColor = '#ff9999';
+    } else if (strength < 50) {
+        password_strength.style.color = '#000';
+        password_strength.style.backgroundColor = '#ff6600';
+        password_strength_container.style.backgroundColor = '#ffc299';
+    } else if (strength < 75) {
+        password_strength.style.color = '#000';
+        password_strength.style.backgroundColor = '#e8ff1a';
+        password_strength_container.style.backgroundColor = '#f7ffb3';
+    } else if (strength < 90) {
+        password_strength.style.color = '#fff';
+        password_strength.style.backgroundColor = '#2bd200';
+        password_strength_container.style.backgroundColor = '#99ff80';
+    } else {
+        password_strength.style.color = '#fff';
+        password_strength.style.backgroundColor = '#009e73';
+        password_strength_container.style.backgroundColor = '#1affc2';
+    }
+}
 let refresh = () => {
     let password_obj = getPassword();
     writePassword(password_obj.value);
-    console.log(password_obj.strength);
+    showStrength(password_obj.strength);
 }
 
 refresh();
