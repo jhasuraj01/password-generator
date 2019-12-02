@@ -19,45 +19,69 @@ let copyPassword = (event) => {
     return null;
 };
 
-let generate_password = (atr = { length: 16, uppercase: true, lowercase: true, number: true, symbol: true }) => {
-    let password = '';
+let generate_password = (rqr_pass = { length: 16, uppercase: true, lowercase: true, number: true, symbol: true }) => {
     let charArray = [];
-    if (atr.uppercase) {
-        charArray.push(...['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
+    let uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    let number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    let symbol = ['@', '%', '+', '\\', '/', '\'', '!', '#', '$', '^', '?', ':', '.', '(', ')', '{', '}', '[', ']', '~', '\`', '_', ',']
+    if (rqr_pass.uppercase) {
+        charArray.push(...uppercase);
     }
-    if (atr.lowercase) {
-        charArray.push(...['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']);
+    if (rqr_pass.lowercase) {
+        charArray.push(...lowercase);
     }
-    if (atr.number) {
-        charArray.push(...['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+    if (rqr_pass.number) {
+        charArray.push(...number);
     }
-    if (atr.symbol) {
-        charArray.push(...['@', '%', '+', '\\', '/', '\'', '!', '#', '$', '^', '?', ':', '.', '(', ')', '{', '}', '[', ']', '~', '\`', '_', ',']);
+    if (rqr_pass.symbol) {
+        charArray.push(...symbol);
     }
-    for (let i = 0; i < atr.length; i++) {
+    let password = { value: '', strength: Math.log(Math.pow(charArray.length, rqr_pass.length)) / Math.log(3) };
+
+    for (let i = 0; i < rqr_pass.length; i++) {
         let rand = Math.random();
         let index = Math.floor(rand * charArray.length);
         char = charArray[index];
         if (char) {
-            password += char;
+            password.value += char;
         }
         else {
             console.log(`char: ${char}, index: ${index}, rand: ${rand}`);
         }
     }
+    // to ensure all the required charecters are included.
+    if (rqr_pass.length >= 4) {
+
+        if (rqr_pass.uppercase) {
+            if (([...password.value].some(item => uppercase.includes(item))) === false) password = generate_password(rqr_pass);
+        }
+        if (rqr_pass.lowercase) {
+            if ([...password.value].some(item => lowercase.includes(item)) === false) password = generate_password(rqr_pass);
+        }
+        if (rqr_pass.number) {
+            if ([...password.value].some(item => number.includes(item)) === false) password = generate_password(rqr_pass);
+        }
+        if (rqr_pass.symbol) {
+            if ([...password.value].some(item => symbol.includes(item)) === false) password = generate_password(rqr_pass);
+        }
+    }
+
+
     return password;
 }
 
 
 let getPassword = () => {
-    atr = {
+    rqr_pass = {
         length: password_size_in.value || 16,
         uppercase: use_uppercase.checked,
         lowercase: use_lowercase.checked,
         number: use_numbers.checked,
         symbol: use_symbols.checked
     }
-    return generate_password(atr);
+    password_obj = generate_password(rqr_pass);
+    return password_obj;
 }
 
 let previous_timeOuts = [];
@@ -78,8 +102,9 @@ let writePassword = (password) => {
 }
 
 let refresh = () => {
-    let password = getPassword();
-    writePassword(password);
+    let password_obj = getPassword();
+    writePassword(password_obj.value);
+    console.log(password_obj.strength);
 }
 
 refresh();
@@ -112,7 +137,30 @@ use_uppercase.addEventListener('change', () => { refresh(); preventAllToggleOff(
 use_lowercase.addEventListener('change', () => { refresh(); preventAllToggleOff(); });
 use_numbers.addEventListener('change', () => { refresh(); preventAllToggleOff(); });
 use_symbols.addEventListener('change', () => { refresh(); preventAllToggleOff(); });
-password_size_in.addEventListener('input', refresh);
+
+password_size_in.addEventListener('input', () => {
+    let validate_password_size_in = () => {
+        if (password_size_in.value >= 4) {
+            // All is well, generate password
+            return true;
+        } else if (password_size_in === document.activeElement) {
+            // user is entering value wait before generating password
+            return false;
+        } else {
+            // user is entered incorrect value reset and generate password
+            password_size_in.value = 4;
+            return true;
+        }
+    }
+    if (validate_password_size_in()) refresh();
+});
+password_size_in.addEventListener('blur', () => {
+    if (password_size_in.value < 4) {
+        // user is entered incorrect value reset and generate password
+        password_size_in.value = 4;
+        refresh();
+    };
+});
 
 document.getElementById('quick-inputs-8').addEventListener('click', () => { password_size_in.value = 8; refresh(); });
 document.getElementById('quick-inputs-16').addEventListener('click', () => { password_size_in.value = 16; refresh(); });
