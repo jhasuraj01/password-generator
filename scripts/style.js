@@ -16,7 +16,7 @@ refresh_password_btn.addEventListener('click', () => {
     }, 500);
 });
 
-let media = window.matchMedia('(min-height: 35em)');
+let media = window.matchMedia('(min-height: 37em)');
 
 let handleMedia = (media) => {
     if (media.matches) {
