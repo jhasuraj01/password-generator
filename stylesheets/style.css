@@ -211,7 +211,7 @@
     min-width: 4em;
     text-align: left;
     padding: 1em 0;
-
+}
 #create-and-copy-btn:active {
     transform: scale3d(0.97, 0.97, 0.97);
 }
