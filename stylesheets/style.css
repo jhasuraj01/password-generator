@@ -93,7 +93,8 @@
     margin: 0.2em;
 }
 #password-in {
-    flex: 1 1 auto;
+    flex: 1 1 50%;
+    min-width: 0;  /* Problem: https://stackoverflow.com/questions/42421361/input-button-elements-not-shrinking-in-a-flex-container */
     margin: 0.2em;
     border: none;
     border-bottom: 0.25em solid violet;
