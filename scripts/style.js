@@ -27,19 +27,12 @@ let repositionSideNavBar = () => {
     if (sidebar_btn_checkBox.checked === true) {
         sideNavBar.style.transform = "translateX(0)";
         if (!media_forHeader.matches) {
-            body_header.style.transform = `translateX(${sideNavBar.offsetWidth}px)`;
-            body_footer.style.transform = `translateX(${sideNavBar.offsetWidth}px)`;
-            main.style.transform = `translateX(${sideNavBar.offsetWidth}px)`;
+            document.getElementById('secondary-menu-close-btn').style.display = "initial";
         } else {
-            body_header.style.transform = "translateX(0)";
-            main.style.transform = "translateX(0)";
-            body_footer.style.transform = "translateX(0)";
+            document.getElementById('secondary-menu-close-btn').style.display = "none";
         }
     } else {
         sideNavBar.style.transform = "translateX(calc(-100% - 6px))";
-        body_header.style.transform = "translateX(0)";
-        main.style.transform = "translateX(0)";
-        body_footer.style.transform = "translateX(0)";
     }
 }
 

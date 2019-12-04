@@ -35,3 +35,12 @@
 #sidebar-btn-checkBox:checked ~ .line:nth-of-type(3) {
     transform: translateY(calc((var(--hamberger-menu-btn-line-height) + var(--hamberger-menu-btn-line-vertical-margin)) * -1)) rotateZ(-0.875turn);
 }
+
+#secondary-menu-close-btn {
+    width: 2em;
+    height: 2em;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    outline: none;
+}
