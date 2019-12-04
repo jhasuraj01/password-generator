@@ -37,7 +37,7 @@
     transition: border 1s ease;
 }
 #side-navBar .nav-types:nth-child(2){
-    margin-top: 1.4em;
+    margin-top: clac(1em + 5px);
     border-top: none;
 }
 #side-navBar .nav-types:last-child {
