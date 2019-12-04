@@ -39,7 +39,7 @@ let repositionSideNavBar = () => {
 let handle_Media_forHeader = (media_forHeader) => {
     if (media_forHeader.matches) {
         password_container.style.top = `${body_header.clientHeight}px`;
-        sideNavBar.style.setProperty('--top', `${body_header.clientHeight}px`);
+        sideNavBar.style.setProperty('--top', `${body_header.clientHeight-5}px`);
         sideNavBar.style.zIndex = '2';
     } else {
         password_container.style.top = "0";

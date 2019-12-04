@@ -36,8 +36,8 @@
     border-bottom: 0.07em solid rgba(128, 128, 128, 0.5);
     transition: border 1s ease;
 }
-#side-navBar .nav-types:first-child{
-    margin-top: 1em;
+#side-navBar .nav-types:nth-child(2){
+    margin-top: 1.4em;
     border-top: none;
 }
 #side-navBar .nav-types:last-child {
