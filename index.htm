@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#00ffff" />
     <title>Password Generator | Suraj Jha | v1</title>
     <link rel="stylesheet" href="./stylesheets/default.css">
     <link rel="stylesheet" href="./stylesheets/toggle-btn.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="stylesheet" href="./stylesheets/footer.css">
     <link rel="stylesheet" href="./stylesheets/hambergerMenuBtn.css">
+    <link rel="stylesheet" href="./stylesheets/SideNavBar.css">
 
     <link rel="apple-touch-icon" sizes="512x512" href="./images/icon/fingerprint(512).png">
     <link rel="icon" type="image/png" sizes="512x512" href="./images/icon/fingerprint(512).png">
     <meta name="msapplication-TileImage" content="./images/icon/fingerprint(512).png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#00ffff">
+    <meta name="theme-color" content="#00ffff" />
     <link rel="manifest" href="/manifest.json">
 
 </head>
@@ -25,14 +25,36 @@
 <body>
     <header id="body-header">
         <label id="sidebar-btn" class="hamberger-menu-btn">
-            <input type="checkbox" name="sidebar-btn-checkBox" id="sidebar-btn-checkBox" style="display: none;">
+            <input type="checkbox" name="sidebar-btn-checkBox" id="sidebar-btn-checkBox" style="display: none;" checked>
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
         </label>
         <h1 id="branding-h">Password <small style="font-size: small; color: darkcyan;">Generator</small></h1>
     </header>
-    <nav id="Side-navBar"></nav>
+    <nav id="side-navBar">
+        <div class="nav-types">
+            <a href="#" class="nav-items" target="_blank" title="Click here to know about the App">About</a>
+            <a href="#" class="nav-items" target="_blank" title="Click here to learn how to use the App">Help</a>
+        </div>
+        <div class="nav-types">
+            <a href="https://github.com/the-suraj/password-generator/" class="nav-items" target="_blank">Contribute</a>
+            <a href="#" class="nav-items" target="_blank">Feedback</a>
+            <a href="#" class="nav-items" target="_blank">Suggest</a>
+        </div>
+        <div class="nav-types">
+            <a href="#" class="nav-items" target="_blank" title="Click here to explore more Apps">More Apps</a>
+            <a href="https://jhasuraj.com/" class="nav-items" target="_blank" title="Click here to vist portfolio of the developer of Password Generator">Creator</a>
+        </div>
+        <div class="nav-types">
+            <a href="#" class="nav-items" target="_blank">Terms and Conditions</a>
+            <a href="#" class="nav-items" target="_blank">Privacy and Policy</a>
+        </div>
+        <div class="nav-types">
+            <a href="#" class="nav-items" target="_blank">Copyright</a>
+            <a href="#license" class="nav-items" target="_blank">License</a>
+        </div>
+    </nav>
     <main id="main">
         <section id="main-section">
             <header>
