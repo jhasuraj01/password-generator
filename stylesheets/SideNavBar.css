@@ -16,12 +16,17 @@
     background: inherit;
     box-shadow: 1px 0 2px 0 rgba(128, 128, 128, 0.3), 2px 0 6px 2px rgba(128 ,128, 128, .15);
 }
-@supports (backdrop-filter: blur(2em)) {
-    #side-navBar {
-        backdrop-filter: blur(2em) grayscale(0.5);
-        background: none;
+
+/* Blur effect will only be used for computer sized screens */
+@media (min-width: 50em) {
+    @supports (backdrop-filter: blur(2em)) {
+        #side-navBar {
+            backdrop-filter: blur(2em) grayscale(0.5);
+            background: none;
+        }
     }
 }
+
 
 #side-navBar .nav-types{
     display: block;
