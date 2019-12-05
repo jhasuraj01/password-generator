@@ -30,11 +30,15 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.share-container a, .contact-container a {
+.share-container a, .contact-container a , .share-container button, .contact-container button{
     margin: 0.2em;
     height: 1.8em;
     width: 1.8em;
     text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
 }
 .social-icon {
     fill: gray;
