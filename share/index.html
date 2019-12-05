@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Share Document</title>
+    <link rel="stylesheet" href="main.css">
+    
+    <!-- fb share -->
+    <meta property="og:url" content="https://jhasuraj.com/password-generator/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Password Generator | Suraj Jha | v1" />
+    <meta property="og:description" content="This is an advance random password generator" />
+    <meta property="og:image" content="https://jhasuraj.com/password-generator/images/icon/fingerprint.svg" />
+</head>
+
+<body>
+    
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your share button code -->
+    <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count">
+    </div>
+
+    <div class="sharing-container">
+        <h1>Share Document</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores labore accusamus mollitia nihil? Ut nobis,
+            soluta earum provident praesentium dicta cupiditate, repudiandae hic dolorum consequuntur beatae explicabo
+            nesciunt culpa! Quam!</p>
+        <label for="native-share-btn" id="native-share-btn-label">
+            <button id="native-share-btn">Click to Share</button>
+        </label>
+        <div id="elementary-share-btn-container">
+            <label for="share-facebook">
+                <button>Facebook</button>
+            </label>
+            <label for="share-whatsapp">
+                <button>Whatsapp</button>
+            </label>
+            <label for="share-twitter">
+                <button>Twitter</button>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
