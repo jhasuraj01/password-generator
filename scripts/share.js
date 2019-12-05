@@ -2,6 +2,7 @@ let popitup = (rqr_win = {name: 'new Window', url: 'https://example.com'}) => {
     console.log(rqr_win);
     newwindow = window.open(rqr_win.url, rqr_win.name, "height=500,width=700");
     newwindow.focus();
+    return newwindow;
 };
 
 document.getElementById('whatsapp-share').addEventListener('click', () => {
@@ -28,3 +29,10 @@ document.getElementById('twitter-share').addEventListener('click', () => {
         url: 'https://twitter.com/intent/tweet?text='+ encodeURIComponent(window.location.href)
     })
 });
+document.getElementById('email-share').addEventListener('click', () => {
+    popitup({
+        name: 'share on Email',
+        url: 'mailto:?subject=Password Generator App reference&body=Use an advance random Password Generator tool to manage you Privacy easily using long and secure password.%0A%0ACheck out this site '+ encodeURIComponent(window.location.href)
+    }).close();
+
+})
