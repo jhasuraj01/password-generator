@@ -1,8 +1,8 @@
 :root {
     font-size: large;
-    --background-color: initial;
-    --color: initial;
-    --big-box-shadow: rgba(255, 0, 0, 0.2);
+    --background-color: white;
+    --color: black;
+    --big-box-shadow: rgba(149, 243, 255, 0.1);
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -47,6 +47,7 @@ button:active, button:focus, button, label:active, label:focus, label {
     body {
         --background-color: #000;
         --color: white;
+        --big-box-shadow: rgba(255, 0, 0, 0.2);
     }
 }
 
