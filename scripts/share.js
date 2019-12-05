@@ -34,5 +34,22 @@ document.getElementById('email-share').addEventListener('click', () => {
         name: 'share on Email',
         url: 'mailto:?subject=Password Generator App reference&body=Use an advance random Password Generator tool to manage you Privacy easily using long and secure password.%0A%0ACheck out this site '+ encodeURIComponent(window.location.href)
     }).close();
-
-})
+});
+document.getElementById('pinterest-share').addEventListener('click', () => {
+    popitup({
+        name: 'share on pinterest',
+        url: 'https://pinterest.com/pin/create/button/?description=Password+Generator&url='+ encodeURIComponent(window.location.href)
+    })
+});
+document.getElementById('linkedin-share').addEventListener('click', () => {
+    popitup({
+        name: 'share on linkedin',
+        url: 'https://www.linkedin.com/shareArticle?mini=true&url='+ encodeURIComponent(window.location.href)
+    })
+});
+document.getElementById('reddit-share').addEventListener('click', () => {
+    popitup({
+        name: 'share on Reddit',
+        url: 'https://www.reddit.com/submit?title=Password+Generator&url='+ encodeURIComponent(window.location.href)
+    })
+});
