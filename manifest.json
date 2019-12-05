@@ -15,7 +15,7 @@
             "sizes": "512x512"
         }
     ],
-    "start_url": "./index.htm",
+    "start_url": "/password-generator/",
     "background_color": "#00ffff",
     "display": "standalone",
     "theme_color": "#00ffff",
