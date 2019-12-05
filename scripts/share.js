@@ -7,6 +7,6 @@ let popitup = (rqr_win = {name: 'new Window', url: 'https://example.com'}) => {
 document.getElementById('fb-share').addEventListener('click', () => {
     popitup({
         name: 'share on facebook',
-        url: 'https://www.facebook.com/sharer/sharer.php?&u='+ encodeURIComponent(window.location.href);
+        url: 'https://www.facebook.com/sharer/sharer.php?&u='+ encodeURIComponent(window.location.href)
     })
 })
