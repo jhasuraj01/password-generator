@@ -1,0 +1,23 @@
+{
+    "lang": "en",
+    "short_name": "PassGen",
+    "name": "Password Generator",
+    "description": "Use an advance random Password Generator tool to manage you Privacy easily using long and secure password",
+    "icons": [
+        {
+            "src": "./images/icon/fingerprint(192).png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./images/icon/fingerprint(512).png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "./index.htm",
+    "background_color": "#00ffff",
+    "display": "standalone",
+    "theme_color": "#00ffff",
+    "scope": "/password-generator/"
+}
