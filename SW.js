@@ -28,6 +28,7 @@ self.addEventListener('install', (event) => {
     console.log('Service Worker: Installed');
 
     // wait untill the promice is finished
+    /* the waitUntil method is used to tell the browser not to terminate the service worker until the promise passed to waitUntil is either resolved or rejected. */
     event.waitUntil(
         caches
             .open(cacheName)
@@ -65,6 +66,6 @@ self.addEventListener('fetch', (event) => {
     // first check if live site is availabe else fetch file from cache
     event.respondWith(
         /* if there is no connection then fetching will fail then we would call a catch function since it returns a promise*/
-        fetch(event.request).catch(() => caches.match(e.request))
+        fetch(event.request).catch(() => caches.match(event.request))
     )
 })
