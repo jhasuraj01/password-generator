@@ -4,7 +4,7 @@ let use_numbers = document.getElementById('use-numbers');
 let use_symbols = document.getElementById('use-symbols');
 let password_size_in = document.getElementById('password-size-in');
 let password_in = document.getElementById('password-in');
-let tgl_in_arr = document.getElementsByClassName('tgl-in');
+let tgl_in_arr = [...document.getElementsByClassName('tgl-in')];
 
 let copyPassword = (event) => {
     navigator.clipboard.writeText(password_in.value)
@@ -144,25 +144,19 @@ let refresh = () => {
 
 refresh();
 
+let on_tgl_in_arr = [];
 let preventAllToggleOff = () => {
-    let number_of_tgl_in_checked = 0;
-    // check how many toggles are on
-    [...tgl_in_arr].forEach(tgl_in => {
-        if (tgl_in.checked) number_of_tgl_in_checked++;
-    });
+    // filter toggles which are on
+    on_tgl_in_arr = tgl_in_arr.filter(tgl_in => tgl_in.checked);
 
     /*
-    if one one toggle is on disable it from being off
+    if only one toggle is on disable it from being off
     else enable all the toggle from being off.
     */
-    if (number_of_tgl_in_checked === 1) {
-        [...tgl_in_arr].forEach(tgl_in => {
-            if (tgl_in.checked) tgl_in.disabled = true;
-        });
+    if (on_tgl_in_arr.length === 1) {
+        on_tgl_in_arr.map(tgl_in => tgl_in.disabled = true);
     } else {
-        [...tgl_in_arr].forEach(tgl_in => {
-            if (tgl_in.checked) tgl_in.disabled = false;
-        });
+        on_tgl_in_arr.map(tgl_in => tgl_in.disabled = false);
     }
 }
 
