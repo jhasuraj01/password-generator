@@ -59,7 +59,27 @@ main.style.transition = "transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1)";
 sideNavBar.style.transition = "transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1)";
 
 
-sidebar_btn_checkBox.addEventListener('change', repositionSideNavBar);
+sidebar_btn_checkBox.addEventListener('change', () => {
+    repositionSideNavBar();
+    if (sidebar_btn_checkBox.checked === true) {
+        // window.history.pushState("","", "/navigation");
+        // window.history.pushState({"html": "<p> hi </p>","pageTitle":"Page Title"},"", "/navigation");
+        window.history.pushState('navigation', 'navigation bar is open', '/navigation');
+        // console.log(window.history.state());
+    }
+});
+
+window.onpopstate = function(e){
+    // console.log(e);
+    // if(e.state){
+    //     document.getElementById("main").innerHTML = window.history.state.html;
+    //     document.title = window.history.state.pageTitle;
+    //     console.log(1);
+    // }
+    sidebar_btn_checkBox.click();
+};
+
+// window.addEventListener('popstate', (event) => console.log(event))
 window.addEventListener('resize', () => {
     repositionSideNavBar();
 });
