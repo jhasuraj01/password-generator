@@ -1,4 +1,4 @@
-const cacheName = 'v2';
+const cacheName = 'v1';
 const assets = [
     './',
     './index.htm',
@@ -65,6 +65,6 @@ self.addEventListener('fetch', (event) => {
     // first check if live site is availabe else fetch file from cache
     event.respondWith(
         /* if there is no connection then fetching will fail then we would call a catch function since it returns a promise*/
-        fetch(event.request).catch( () => caches.match(e.request))
+        fetch(event.request).catch(() => caches.match(e.request))
     )
 })
