@@ -15,6 +15,7 @@ const assets = [
     './stylesheets/toggle-btn.css',
     './images/icon/fingerprint.svg',
     './images/icon/fingerprint(128).png',
+    './images/icon/fingerprint(144).png',
     './images/icon/fingerprint(152).png',
     './images/icon/fingerprint(192).png',
     './images/icon/fingerprint(384).png',

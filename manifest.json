@@ -11,6 +11,12 @@
             "purpose": "maskable"
         },
         {
+            "src": "./images/icon/fingerprint(144).png",
+            "type": "image/png",
+            "sizes": "144x144",
+            "purpose": "maskable"
+        },
+        {
             "src": "./images/icon/fingerprint(152).png",
             "type": "image/png",
             "sizes": "152x152",
