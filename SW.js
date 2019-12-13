@@ -1,6 +1,8 @@
-const cacheName = 'v1';
-const assets = [
-    './',
+// This is the service worker with the Cache-first network
+
+const cacheName = "v1";
+const precacheFiles = [
+    /* Add an array of files to precache for your app */
     './index.htm',
     './manifest.json',
     './registerSW.js',
@@ -14,6 +16,8 @@ const assets = [
     './stylesheets/style.css',
     './stylesheets/toggle-btn.css',
     './images/icon/fingerprint.svg',
+    './images/icon/fingerprint(72).png',
+    './images/icon/fingerprint(96).png',
     './images/icon/fingerprint(128).png',
     './images/icon/fingerprint(144).png',
     './images/icon/fingerprint(152).png',
@@ -24,26 +28,28 @@ const assets = [
     './images/refresh.svg'
 ];
 
-// Call install event
-self.addEventListener('install', (event) => {
-    console.log('Service Worker: Installed');
+self.addEventListener("install", function (event) {
+    console.log("Install Event processing");
 
-    // wait untill the promice is finished
-    /* the waitUntil method is used to tell the browser not to terminate the service worker until the promise passed to waitUntil is either resolved or rejected. */
+
     event.waitUntil(
-        caches
-            .open(cacheName)
-            .then(cache => {
-                console.log('Service Worker: Caching File');
-                cache.addAll(assets);
+        caches.open(cacheName)
+            .then(function (cache) {
+                console.log("Caching pages during install");
+                return cache.addAll(precacheFiles);
             })
-            .then(() => self.skipWaiting())
+            .then(function () {
+                console.log("Skip waiting on install");
+                self.skipWaiting();
+            })
     );
 });
 
-// call activate event
-self.addEventListener('activate', (event) => {
-    console.log('Service Worker: Activated');
+self.addEventListener("activate", function (event) {
+
+    // Allow sw to control of current page
+    console.log("Claiming clients for current page");
+    event.waitUntil(self.clients.claim());
 
     // remove unwanted previously cached files
     event.waitUntil(
@@ -61,12 +67,66 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// call fetch event
-self.addEventListener('fetch', (event) => {
-    console.log('Service Worker: Fetching');
-    // first check if live site is availabe else fetch file from cache
+// If any fetch fails, it will look for the request in the cache and serve it from there first
+self.addEventListener("fetch", function (event) {
+    if (event.request.method !== "GET") return;
+
     event.respondWith(
-        /* if there is no connection then fetching will fail then we would call a catch function since it returns a promise*/
-        fetch(event.request).catch(() => caches.match(event.request))
-    )
-})
+        fromCache(event.request)
+            .then(
+                function (response) {
+                    // The response was found in the cache so we responde with it and update the entry
+
+                    // This is where we call the server to get the newest version of the
+                    // file to use the next time we show view
+                    event.waitUntil(
+                        fetch(event.request)
+                            .then(function (response) {
+                                console.log('Updating Files: ', response);
+                                return updateCache(event.request, response);
+                            })
+                            .catch(function (err) {
+                                console.log('No network Connection: Failed to update Files', err);
+                            })
+
+                    );
+
+                    return response;
+                },
+                function () {
+                    // The response was not found in the cache so we look for it on the server
+                    return fetch(event.request)
+                        .then(function (response) {
+                            // If request was success, add or update it in the cache
+                            event.waitUntil(updateCache(event.request, response.clone()));
+
+                            return response;
+                        })
+                        .catch(function (error) {
+                            console.log("Network request failed and no cache." + error);
+                        });
+                }
+            )
+    );
+});
+
+function fromCache(request) {
+    // Check to see if you have it in the cache
+    // Return response
+    // If not in the cache, then return
+    return caches.open(cacheName).then(function (cache) {
+        return cache.match(request).then(function (matching) {
+            if (!matching || matching.status === 404) {
+                return Promise.reject("no-match");
+            }
+
+            return matching;
+        });
+    });
+}
+
+function updateCache(request, response) {
+    return caches.open(cacheName).then(function (cache) {
+        return cache.put(request, response);
+    });
+}

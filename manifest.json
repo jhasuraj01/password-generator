@@ -5,6 +5,18 @@
     "description": "Use an advance random Password Generator tool to manage you Privacy easily using long and secure password",
     "icons": [
         {
+            "src": "./images/icon/fingerprint(72).png",
+            "type": "image/png",
+            "sizes": "72x72",
+            "purpose": "maskable"
+        },
+        {
+            "src": "./images/icon/fingerprint(96).png",
+            "type": "image/png",
+            "sizes": "96x96",
+            "purpose": "maskable"
+        },
+        {
             "src": "./images/icon/fingerprint(128).png",
             "type": "image/png",
             "sizes": "128x128",
