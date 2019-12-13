@@ -7,50 +7,42 @@
         {
             "src": "./images/icon/fingerprint(72).png",
             "type": "image/png",
-            "sizes": "72x72",
-            "purpose": "maskable"
+            "sizes": "72x72"
         },
         {
             "src": "./images/icon/fingerprint(96).png",
             "type": "image/png",
-            "sizes": "96x96",
-            "purpose": "maskable"
+            "sizes": "96x96"
         },
         {
             "src": "./images/icon/fingerprint(128).png",
             "type": "image/png",
-            "sizes": "128x128",
-            "purpose": "maskable"
+            "sizes": "128x128"
         },
         {
             "src": "./images/icon/fingerprint(144).png",
             "type": "image/png",
-            "sizes": "144x144",
-            "purpose": "maskable"
+            "sizes": "144x144"
         },
         {
             "src": "./images/icon/fingerprint(152).png",
             "type": "image/png",
-            "sizes": "152x152",
-            "purpose": "maskable"
+            "sizes": "152x152"
         },
         {
             "src": "./images/icon/fingerprint(192).png",
             "type": "image/png",
-            "sizes": "192x192",
-            "purpose": "maskable"
+            "sizes": "192x192"
         },
         {
             "src": "./images/icon/fingerprint(384).png",
             "type": "image/png",
-            "sizes": "384x384",
-            "purpose": "maskable"
+            "sizes": "384x384"
         },
         {
             "src": "./images/icon/fingerprint(512).png",
             "type": "image/png",
-            "sizes": "512x512",
-            "purpose": "maskable"
+            "sizes": "512x512"
         }
     ],
     "start_url": "/password-generator/",
