@@ -22,3 +22,9 @@ let registerSW = () => {
     }
 }
 window.addEventListener('load', registerSW);
+
+let notificationAccess = () => {
+    Notification.requestPermission(function (status) {
+        console.log('Notification permission status:', status);
+    });
+}
