@@ -19,6 +19,18 @@ let copyPassword = (event) => {
     return null;
 };
 
+function getRandomInt(min, max) {
+    var randomNum = null;
+    if (window.crypto.getRandomValues) {
+        const randomBuffer = new Uint32Array(1);
+        window.crypto.getRandomValues(randomBuffer);
+        randomNum = randomBuffer[0] / (0xffffffff + 1);
+    } else {
+        randomNum = Math.random();
+    }
+    randomNum = Math.floor(randomNum * (max - min + 1)) + min;    // Get number in range
+    return randomNum;
+}
 let generate_password = (rqr_pass = { length: 16, uppercase: true, lowercase: true, number: true, symbol: true }) => {
     let charArray = [];
     let uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -40,14 +52,13 @@ let generate_password = (rqr_pass = { length: 16, uppercase: true, lowercase: tr
     let password = { value: '', strength: Math.log(Math.pow(charArray.length, rqr_pass.length)) / Math.log(3) };
 
     for (let i = 0; i < rqr_pass.length; i++) {
-        let rand = Math.random();
-        let index = Math.floor(rand * charArray.length);
+        let index = getRandomInt(0, charArray.length - 1);
         char = charArray[index];
         if (char) {
             password.value += char;
         }
         else {
-            console.log(`char: ${char}, index: ${index}, rand: ${rand}`);
+            console.error(`char: ${char}, index: ${index}`, "random Number generated out of range");
         }
     }
     // to ensure all the required charecters are included.
