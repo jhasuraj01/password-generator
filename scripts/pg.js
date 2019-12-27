@@ -21,6 +21,7 @@ let copyPassword = (event) => {
 
 function getRandomInt(min, max) {
     var randomNum = null;
+    window.crypto = window.crypto || window.msCrypto;
     if (window.crypto.getRandomValues) {
         const randomBuffer = new Uint32Array(1);
         window.crypto.getRandomValues(randomBuffer);
