@@ -1,6 +1,6 @@
 // This is the service worker with the Cache-first network
 
-const cacheName = "v1";
+const cacheName = "v2";
 const precacheFiles = [
     /* Add an array of files to precache for your app */
     './index.htm',
@@ -10,13 +10,14 @@ const precacheFiles = [
     './scripts/share.js',
     './scripts/storage.js',
     './scripts/style.js',
-    './stylesheets/default.css',
-    './stylesheets/footer.css',
-    './stylesheets/hambergerMenuBtn.css',
-    './stylesheets/SideNavBar.css',
-    './stylesheets/style.css',
-    './stylesheets/toggle-btn.css',
-    './stylesheets/saved-passwords.css',
+    // './stylesheets/default.css',
+    // './stylesheets/footer.css',
+    // './stylesheets/hambergerMenuBtn.css',
+    // './stylesheets/SideNavBar.css',
+    // './stylesheets/style.css',
+    // './stylesheets/toggle-btn.css',
+    // './stylesheets/saved-passwords.css',
+    './stylesheets/index.min.css',
     './images/icon/fingerprint.svg',
     './images/icon/fingerprint(72).png',
     './images/icon/fingerprint(96).png',
