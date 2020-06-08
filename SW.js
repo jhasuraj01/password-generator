@@ -134,21 +134,3 @@ function updateCache(request, response) {
         return cache.put(request, response);
     });
 }
-
-self.addEventListener('push', function (event) {
-    console.log(event);
-    console.log('[Service Worker] Push Received.');
-    console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-    /*
-      const title = 'Push Codelab';
-      const options = {
-        body: event.data.text(),
-        icon: 'images/icon/fingerprint.svg',
-        badge: 'images/icon/fingerprint.svg'
-      };
-    
-      event.waitUntil(
-          self.registration.showNotification(title, options)
-      );
-      */
-});
