@@ -1,15 +1,16 @@
 // This is the service worker with the Cache-first network
 
-const cacheName = "v2";
+const cacheName = "v2.0.1";
 const precacheFiles = [
     /* Add an array of files to precache for your app */
     './index.htm',
     './manifest.json',
-    './registerSW.js',
-    './scripts/pg.js',
-    './scripts/share.js',
-    './scripts/storage.js',
-    './scripts/style.js',
+    // './registerSW.js',
+    // './scripts/pg.js',
+    // './scripts/share.js',
+    // './scripts/storage.js',
+    // './scripts/style.js',
+    './scripts/index.min.js',
     // './stylesheets/default.css',
     // './stylesheets/footer.css',
     // './stylesheets/hambergerMenuBtn.css',
