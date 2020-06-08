@@ -1,6 +1,6 @@
 // This is the service worker with the Cache-first network
 
-const cacheName = "v2.0.1";
+const cacheName = "v2.0.2";
 const precacheFiles = [
     /* Add an array of files to precache for your app */
     './index.htm',
