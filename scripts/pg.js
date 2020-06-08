@@ -4,7 +4,7 @@ let use_numbers = document.getElementById('use-numbers');
 let use_symbols = document.getElementById('use-symbols');
 let password_size_in = document.getElementById('password-size-in');
 let password_in = document.getElementById('password-in');
-let tgl_in_arr = new Array(document.getElementsByClassName('tgl-in'))
+let tgl_in_arr = Array.from(document.getElementsByClassName('tgl-in'))
 
 let copyPassword = (event) => {
     navigator.clipboard.writeText(password_in.value)
